@@ -28,7 +28,7 @@ version 1.0
 # WORKFLOW DEFINITION
 workflow ValidateBamsWf {
   input {
-    Array[File] bam_array 
+    Array[File] bam_array = ["s3://lifebit-featured-datasets/IGV/crg-covid/BAM/8F6N9_Korea_IVT.Wuhan_Hu_1_NanoPreprocess_alignment_Guppy3.1.5_Minimap2Default.minimap2.sorted.05.bam"]
     String gatk_docker = "broadinstitute/gatk:latest"
     String gatk_path = "/gatk/gatk"
   }
