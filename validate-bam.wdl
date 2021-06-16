@@ -28,7 +28,8 @@ version 1.0
 # WORKFLOW DEFINITION
 workflow ValidateBamsWf {
   input {
-    Array[File] bam_array = ["s3://lifebit-user-data-50778203-8300-4b61-8caf-0795a091ed3f/deploit/teams/5fc3e61799766d00247f4936/users/5ffc7039789f8601c0ced817/dataset/60c86d19a4146301a5229e04/uploaded.bam"]
+    #Array[File] bam_array = ["s3://lifebit-user-data-50778203-8300-4b61-8caf-0795a091ed3f/deploit/teams/5fc3e61799766d00247f4936/users/5ffc7039789f8601c0ced817/dataset/60c86d19a4146301a5229e04/uploaded.bam"]
+    Array[File] bam_array = ["s3://lifebit-user-data-f0d08d30-1ff5-4d53-9128-9140f5e050ec/deploit/teams/5fc3e61799766d00247f4936/users/60c77bf4ec129e01a5a37e74/dataset/60c86d19a4146301a5229e04/test_test2.bam"]
     String gatk_docker = "broadinstitute/gatk:latest"
     String gatk_path = "/gatk/gatk"
   }
