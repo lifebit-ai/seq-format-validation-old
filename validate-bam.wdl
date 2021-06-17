@@ -28,7 +28,7 @@ version 1.0
 # WORKFLOW DEFINITION
 workflow ValidateBamsWf {
   input {
-    Array[File] bam_array 
+    Array[File] bam_array = ["s3://lifebit-user-data-50778203-8300-4b61-8caf-0795a091ed3f/deploit/teams/5fc3e61799766d00247f4936/users/5ffc7039789f8601c0ced817/dataset/60c86d19a4146301a5229e04/uploaded.bam"]
     String gatk_docker = "broadinstitute/gatk:latest"
     String gatk_path = "/gatk/gatk"
   }
@@ -78,6 +78,8 @@ task ValidateBAM {
   command {
     ${gatk_path} \
       ValidateSamFile \
+      --IGNORE_WARNINGS true \
+      --IGNORE MISSING_READ_GROUP \
       --INPUT ${input_bam} \
       --OUTPUT ${output_name} \
       --MODE ${default="SUMMARY" validation_mode}
